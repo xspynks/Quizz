@@ -7,7 +7,7 @@ export default function Login() {
     <Center>
       <Card
         sx={{
-          width: "50%",
+          width: 400,
         }}
       >
         <CardContent>
@@ -15,7 +15,7 @@ export default function Login() {
             sx={{
               "& .MuiTextField-root": {
                 m: 1,
-                width: 400,
+                width: "90%",
               },
             }}
           >
