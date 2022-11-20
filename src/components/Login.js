@@ -22,7 +22,7 @@ export default function Login() {
             Quizz
           </Typography>
           <Typography variant="h5" sx={{ my: 3 }}>
-            Seja bem-vindo!
+            Please, login to your account
           </Typography>
           <Box
             sx={{
