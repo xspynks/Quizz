@@ -8,8 +8,22 @@ import {
   Typography,
 } from "@mui/material";
 import Center from "./Center";
+import useForm from "../hooks/useForm";
+
+const getFreshModelObject = () => ({
+  email: "",
+  name: "",
+});
 
 export default function Login() {
+  const { values, setValues, errors, setErrors, handleInputChange } =
+    useForm(getFreshModelObject);
+
+  const login = (e) => {
+    e.preventDefault();
+    console.log(values);
+  };
+
   return (
     <Center>
       <Card
@@ -32,9 +46,21 @@ export default function Login() {
               },
             }}
           >
-            <form noValidate autoComplete="off">
-              <TextField label="Email" name="email" variant="outlined" />
-              <TextField label="Name" name="name" variant="outlined" />
+            <form noValidate autoComplete="off" onSubmit={login}>
+              <TextField
+                label="Email"
+                name="email"
+                value={values.email}
+                onChange={handleInputChange}
+                variant="outlined"
+              />
+              <TextField
+                label="Name"
+                name="name"
+                value={values.name}
+                onChange={handleInputChange}
+                variant="outlined"
+              />
               <Button
                 type="submit"
                 variant="contained"
